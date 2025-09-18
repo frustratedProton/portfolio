@@ -88,7 +88,7 @@ export const Projects = () => {
 					>
 						You can check out my other projects on{' '}
 						<a
-							href="https://github.com/your-username"
+							href="https://github.com/frustratedproton"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
