@@ -1,0 +1,32 @@
+@use '../../variables' as *;
+
+.nav_link {
+	font-family: 'Cinzel', 'Playfair Display', serif;
+	font-size: 1.1rem; 
+	position: relative;
+	margin: 0.5rem;
+	cursor: pointer;
+
+	@media (max-width: $breakpoint-small) {
+		margin: 0.5rem;
+		margin-top: 0;
+	}
+
+	&:after {
+		content: '';
+		bottom: -2px;
+		left: 50%;
+		position: absolute;
+		width: 0%;
+		height: 2px;
+		background-color: #fff;
+		transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+		transition-duration: 400ms;
+		transition-property: width, left;
+	}
+
+	&:hover:after {
+		width: 100%;
+		left: 0%;
+	}
+}

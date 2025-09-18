@@ -1,0 +1,53 @@
+@use '../../variables' as *;
+
+.grainyContainer {
+	position: absolute;
+	top: 18%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: -2;
+
+	@media (max-width: $breakpoint-large) {
+		top: 22%;
+	}
+
+	@media (max-width: $breakpoint-medium) {
+		top: 25%;
+	}
+
+	@media (max-width: $breakpoint-small) {
+		top: 28%;
+	}
+}
+
+.gr1,
+.gr2 {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.gr1 {
+	z-index: 1;
+}
+
+.gr2 {
+	z-index: 0;
+	top: -4.5em;
+	left: calc(50% - 150px);
+
+	@media (max-width: $breakpoint-large) {
+		left: calc(50% - 120px);
+	}
+
+	@media (max-width: $breakpoint-medium) {
+		left: calc(50% - 100px);
+	}
+
+	@media (max-width: $breakpoint-small) {
+		left: calc(50% - 80px);
+	}
+}

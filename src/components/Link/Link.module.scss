@@ -1,0 +1,45 @@
+@use '../../variables' as *;
+
+.link,
+.link_large,
+.link_medium {
+	font-style: italic;
+	font-family: 'GT Walsheim', 'Playfair Display', serif;
+	position: relative;
+	text-wrap: nowrap;
+}
+
+.link::after,
+.link_large::after,
+.link_medium::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 50%;
+	width: 0%;
+	height: 2px;
+	background-color: #fff;
+	transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+		left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.link:hover::after,
+.link_medium:hover::after,
+.link_large:hover::after {
+	width: 100%;
+	left: 0%;
+}
+
+.link_large {
+	font-size: 2rem;
+	@media (max-width: $breakpoint-small) {
+		font-size: 1.5rem;
+	}
+	@media (max-width: $breakpoint-extraSmall) {
+		font-size: 1.2rem;
+	}
+}
+
+.link_medium {
+	font-size: 1.5rem;
+}
