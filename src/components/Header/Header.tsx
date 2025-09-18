@@ -6,10 +6,10 @@ import {
 	useTransform,
 	useSpring,
 } from 'motion/react';
-import React from 'react';
 import styles from './Header.module.scss';
 import { variants } from '../../assets/animations/variants';
 import NavLink from '../Navlink/Navlink';
+import { useRef } from 'react';
 
 export const Header = () => {
 	const { scrollY } = useScroll();
@@ -18,8 +18,8 @@ export const Header = () => {
 	const scale = useTransform(scaleSpring, scrollYRange, [0, 1]);
 
 	const controls = useAnimation();
-	const delta = React.useRef(0);
-	const lastScrollY = React.useRef(0);
+	const delta = useRef(0);
+	const lastScrollY = useRef(0);
 
 	useMotionValueEvent(scrollY, 'change', (val: number) => {
 		const diff = Math.abs(val - lastScrollY.current);
